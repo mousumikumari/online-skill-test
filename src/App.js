@@ -9,6 +9,7 @@ import UserRegistration from "./Containers/UserRegistration/UserRegistration";
 import Questions from "./Containers/Questions/Questions";
 import SummaryScreen from "./Containers/SummaryScreen";
 import { isLogin } from "./Components/Utilities/Index";
+import PrivateRoute from "./PrivateRoute";
 
 function App() {
   return (
@@ -27,7 +28,7 @@ function App() {
               component={isLogin() ? FirstPage : UserRegistration}
             />
             <Route path="/Home" component={FirstPage} />
-            <Route path="/Questions" component={Questions} />
+            <PrivateRoute path="/Questions" component={Questions} />
             <Route path="/SummaryScreen" component={SummaryScreen} />
           </Switch>
         </div>
